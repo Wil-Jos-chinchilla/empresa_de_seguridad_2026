@@ -12,7 +12,7 @@ public class ConexionSQL {
 
     private static final String SERVIDOR = "localhost";
     private static final String PUERTO = "1433";
-    private static final String BASE_DATOS = "empresa_de_seguridad";
+    private static final String BASE_DATOS = "EmpresaSeguridad";
     private static final String USUARIO = "sa";
     private static final String PASSWORD = "3719";
 
