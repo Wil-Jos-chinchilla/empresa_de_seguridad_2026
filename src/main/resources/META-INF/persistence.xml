@@ -20,10 +20,10 @@
     <class>com.mycompany.empresa_de_seguridad.model.Turno</class>
     <class>com.mycompany.empresa_de_seguridad.model.Usuario</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost\SQLEXPRESS;databaseName=EmpresaSeguridad;encrypt=true;trustServerCertificate=true"/>
-      <property name="javax.persistence.jdbc.user" value="sa"/>
-      <property name="javax.persistence.jdbc.password" value="3719"/>
-      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="eclipselink.jdbc.url" value="jdbc:sqlserver://localhost\SQLEXPRESS;databaseName=EmpresaSeguridad;encrypt=true;trustServerCertificate=true"/>
+        <property name="eclipselink.jdbc.user" value="sa"/>
+        <property name="eclipselink.jdbc.password" value="3719"/>
+        <property name="eclipselink.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -4,8 +4,13 @@
  */
 package view;
 
+import com.mycompany.empresa_de_seguridad.jpacontroller.AgenteSeguridadJpaController;
+import com.mycompany.empresa_de_seguridad.model.AgenteSeguridad;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 /**
  *
@@ -13,7 +18,38 @@ import jakarta.persistence.Persistence;
  */
 public class view {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("");
+        EntityManagerFactory emf = 
+                Persistence.createEntityManagerFactory("empresa_seguridadPU");
+        
+        EntityManager em = emf.createEntityManager();
+          try {
+            AgenteSeguridadJpaController controller = new AgenteSeguridadJpaController(emf);
+
+            // 1. Crear un agente de prueba
+            AgenteSeguridad nuevoAgente = new AgenteSeguridad();
+            nuevoAgente.setNombre("Juan");
+            nuevoAgente.setApellido("Pérez");
+            nuevoAgente.setDpi("1234567890101");
+            nuevoAgente.setTelefono("55501234");
+            nuevoAgente.setDireccion("Zona 1, Guatemala");
+            nuevoAgente.setFechaIngreso(new SimpleDateFormat("yyyy-MM-dd").parse("2026-09-09"));
+            nuevoAgente.setEstado("DISPONIBLE"); // debe ser uno de los valores del CHECK
+
+            controller.create(nuevoAgente);
+            System.out.println("¡Agente creado con éxito! ID asignado: " + nuevoAgente.getIdAgente());
+
+            // 2. Volver a consultar para confirmar que quedó guardado
+            List<AgenteSeguridad> lista = controller.findAgenteSeguridadEntities();
+            System.out.println("Total de agentes ahora: " + lista.size());
+            for (AgenteSeguridad a : lista) {
+                System.out.println("Agente: " + a.getNombre() + " " + a.getApellido() + " - Estado: " + a.getEstado());
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            emf.close();
+        }
     }
-    
 }
