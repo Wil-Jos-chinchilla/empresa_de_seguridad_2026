@@ -24,7 +24,7 @@ import jakarta.persistence.EntityManagerFactory;
 
 /**
  *
- * @author JOSUE
+ * @author JOSEi
  */
 public class AgenteSeguridadJpaController implements Serializable {
 
