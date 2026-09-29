@@ -32,12 +32,7 @@
         </dependency>
 
         <!-- SQL Server JDBC Driver -->
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>12.6.1.jre11</version>
-            <scope>runtime</scope>
-        </dependency>
+        
 
         <!-- Jakarta Servlet API -->
         <dependency>
@@ -53,7 +48,12 @@
             <version>11.1.0-SNAPSHOT.jre11-preview</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>jakarta.persistence</artifactId>
+            <version>2.2.3</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     
     <build>

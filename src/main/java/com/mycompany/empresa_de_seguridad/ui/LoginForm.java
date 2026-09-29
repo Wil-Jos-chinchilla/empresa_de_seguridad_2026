@@ -1,5 +1,6 @@
-package com.mycompany.empresa_de_seguridad.model;
+package com.mycompany.empresa_de_seguridad.ui;
 
+import com.mycompany.empresa_de_seguridad.model.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -10,12 +11,10 @@ import java.util.List;
 
 /**
  inicio de sesión.
- * @author josei
  */
 public class LoginForm extends JFrame {
 
     private static final String PERSISTENCE_UNIT_NAME = "empresa_seguridadPU";
-
     private JTextField txtUsuario;
     private JPasswordField txtContrasena;
 
