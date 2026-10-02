@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <exec.mainClass>com.mycompany.empresa_de_seguridad.Empresa_de_seguridad</exec.mainClass>
+        <exec.mainClass>com.mycompany.empresa_de_seguridad.LoginForm</exec.mainClass>
     </properties>
     
     <dependencies>
@@ -45,13 +45,6 @@
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>11.1.0-SNAPSHOT.jre11-preview</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>
