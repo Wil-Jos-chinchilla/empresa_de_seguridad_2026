@@ -1,16 +1,9 @@
-///*
+
 // * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 // * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-// */
-//package com.mycompany.empresa_de_seguridad.ui;
-//
-///**
-// *
+
 // * @author josei
-// */
-//public class AsistenciaForm {
-//    
-//}
+
 package com.mycompany.empresa_de_seguridad.ui;
 
 import com.mycompany.empresa_de_seguridad.jpacontroller.AsistenciaJpaController;
@@ -45,8 +38,7 @@ import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * CRUD de Asistencia. Tabla: Asistencia(IdAsistencia, IdTurno, Fecha,
- * HoraEntrada datetime NULL, HoraSalida datetime NULL, Estado, Observacion NULL).
+ * CRUD de Asistencia. Tabla:.
  */
 public class AsistenciaForm extends JFrame {
 

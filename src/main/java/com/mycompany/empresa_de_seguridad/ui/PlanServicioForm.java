@@ -1,9 +1,8 @@
-///*
+
 // * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 // * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
 // * @author josei
-// */
-//}
+
 package com.mycompany.empresa_de_seguridad.ui;
 
 import com.mycompany.empresa_de_seguridad.jpacontroller.PlanServicioJpaController;
