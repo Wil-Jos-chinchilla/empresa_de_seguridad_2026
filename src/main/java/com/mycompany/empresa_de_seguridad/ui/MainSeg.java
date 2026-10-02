@@ -32,7 +32,9 @@ public class MainSeg extends JFrame {
         panelBotones.add(crearBoton("Contratos", e -> abrirModulo("Contratos")));
         panelBotones.add(crearBoton("Planes de Servicio", e -> abrirModulo("Planes de Servicio")));
         panelBotones.add(crearBoton("Puestos de Servicio", e -> abrirModulo("Puestos de Servicio")));
-        panelBotones.add(crearBoton("Turnos y Asistencia", e -> abrirModulo("Turnos y Asistencia")));
+//        panelBotones.add(crearBoton("Turnos y Asistencia", e -> abrirModulo("Turnos y Asistencia")));
+        panelBotones.add(crearBoton("Turnos", e -> abrirModulo("Turnos")));
+        panelBotones.add(crearBoton("Asistencias", e -> abrirModulo("Asistencias")));
         panelBotones.add(crearBoton("Rondas y Puntos de Control", e -> abrirModulo("Rondas")));
         panelBotones.add(crearBoton("Incidentes", e -> abrirModulo("Incidentes")));
         panelBotones.add(crearBoton("Facturación", e -> abrirModulo("Facturación")));
@@ -59,25 +61,35 @@ public class MainSeg extends JFrame {
 //  cambio para el agregado de case de los modulos de botones
     private void abrirModulo(String nombreModulo) {
         switch (nombreModulo) {
-            case "Clientes":
+            case "Clientes" ->
                 new ClienteForm().setVisible(true);
-                break;
-
-            case "Agentes":
+            case "Agentes" ->
                 new AgenteForm().setVisible(true);
-                break;
-
-            case "Planes de Servicio":
+            case "Planes de Servicio" ->
                 new PlanServicioForm().setVisible(true);
-                break;
-            case "Contratos":
+            case "Contratos" ->
                 new ContratoForm().setVisible(true);
-                break;
-
-            // aquí^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-            default:
+            case "Puestos de Servicio" ->
+                new PuestoForm().setVisible(true);
+//            case "Turnos y Asistencia" ->new TurnoForm().setVisible(true);
+            case "Turnos" ->
+                new TurnoForm().setVisible(true);
+            case "Asistencias" ->
+                new AsistenciaForm().setVisible(true);
+//            case "Turno y Asistencia" -> {
+//                String[] op = {"Turnos", "Asistencia"};
+//                int sel = JOptionPane.showOptionDialog(this, "¿Qué módulo deseas abrir?", "Turnos y Asistencia",
+//                        JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, op, op[0]);
+//                if (sel == 0) {
+//                    new TurnoForm().setVisible(true);
+//                } else if (sel == 1) {
+//                    new AsistenciaForm().setVisible(true);
+//                }
+//            }
+            default ->
                 JOptionPane.showMessageDialog(this, "Módulo en construcción: " + nombreModulo);
         }
+        // aquí^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     }
 
     public static void main(String[] args) {
