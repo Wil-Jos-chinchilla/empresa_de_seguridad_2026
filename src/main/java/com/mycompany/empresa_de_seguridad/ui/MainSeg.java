@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * MenÃº principal
+ * Menú principal
  */
 public class MainSeg extends JFrame {
 
     public MainSeg() {
-        setTitle("Empresa de Seguridad - MenÃº Principal");
+        setTitle("Empresa de Seguridad - Menú Principal");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(420, 520);
         setLocationRelativeTo(null);
@@ -19,7 +19,7 @@ public class MainSeg extends JFrame {
         panelPrincipal.setLayout(new BorderLayout());
         panelPrincipal.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
 
-        JLabel lblTitulo = new JLabel("Sistema de GestiÃ³n de Seguridad", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Sistema de Gestión de Seguridad", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 16));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
         panelPrincipal.add(lblTitulo, BorderLayout.NORTH);
@@ -32,10 +32,11 @@ public class MainSeg extends JFrame {
         panelBotones.add(crearBoton("Contratos", e -> abrirModulo("Contratos")));
         panelBotones.add(crearBoton("Planes de Servicio", e -> abrirModulo("Planes de Servicio")));
         panelBotones.add(crearBoton("Puestos de Servicio", e -> abrirModulo("Puestos de Servicio")));
-        panelBotones.add(crearBoton("Turnos y Asistencia", e -> abrirModulo("Turnos y Asistencia")));
+        panelBotones.add(crearBoton("Turnos", e -> abrirModulo("Turnos")));
+        panelBotones.add(crearBoton("Asistencias", e -> abrirModulo("Asistencias")));
         panelBotones.add(crearBoton("Rondas y Puntos de Control", e -> abrirModulo("Rondas")));
         panelBotones.add(crearBoton("Incidentes", e -> abrirModulo("Incidentes")));
-        panelBotones.add(crearBoton("FacturaciÃ³n", e -> abrirModulo("FacturaciÃ³n")));
+        panelBotones.add(crearBoton("Facturación", e -> abrirModulo("Facturación")));
         panelBotones.add(crearBoton("Usuarios y Roles", e -> abrirModulo("Usuarios")));
 
         panelPrincipal.add(panelBotones, BorderLayout.CENTER);
@@ -56,32 +57,28 @@ public class MainSeg extends JFrame {
         return boton;
     }
 
-//  cambio para el agregado de case de los modulos de botones
     private void abrirModulo(String nombreModulo) {
         switch (nombreModulo) {
-            case "Clientes":
+            case "Clientes" ->
                 new ClienteForm().setVisible(true);
-                break;
-
-            case "Agentes":
+            case "Agentes" ->
                 new AgenteForm().setVisible(true);
-                break;
-
-            case "Planes de Servicio":
+            case "Planes de Servicio" ->
                 new PlanServicioForm().setVisible(true);
-                break;
-            case "Contratos":
+            case "Contratos" ->
                 new ContratoForm().setVisible(true);
-                break;
-
-            // aquÃ­^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-            default:
-                JOptionPane.showMessageDialog(this, "MÃ³dulo en construcciÃ³n: " + nombreModulo);
+            case "Puestos de Servicio" ->
+                new PuestoForm().setVisible(true);
+            case "Turnos" ->
+                new TurnoForm().setVisible(true);
+            case "Asistencias" ->
+                new AsistenciaForm().setVisible(true);
+            default ->
+                JOptionPane.showMessageDialog(this, "Módulo en construcción: " + nombreModulo);
         }
     }
 
     public static void main(String[] args) {
-
         SwingUtilities.invokeLater(() -> {
             MainSeg menu = new MainSeg();
             menu.setVisible(true);
