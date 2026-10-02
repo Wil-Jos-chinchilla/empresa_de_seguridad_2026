@@ -1,16 +1,3 @@
-///*
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-// */
-//package com.mycompany.empresa_de_seguridad.ui;
-//
-///**
-// *
-// * @author josei
-// */
-//public class AsistenciaForm {
-//    
-//}
 package com.mycompany.empresa_de_seguridad.ui;
 
 import com.mycompany.empresa_de_seguridad.jpacontroller.AsistenciaJpaController;
@@ -106,7 +93,8 @@ public class AsistenciaForm extends JFrame {
             public Component getListCellRendererComponent(JList<?> list, Object value, int index,
                     boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if (value instanceof Turno t) {
+                if (value instanceof Turno) {
+                    Turno t = (Turno) value;
                     setText(textoTurno(t));
                 }
                 return this;

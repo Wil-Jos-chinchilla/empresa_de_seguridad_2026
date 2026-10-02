@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Men˙ principal
+ * Men√∫ principal
  */
 public class MainSeg extends JFrame {
 
     public MainSeg() {
-        setTitle("Empresa de Seguridad - Men˙ Principal");
+        setTitle("Empresa de Seguridad - Men√∫ Principal");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(420, 520);
         setLocationRelativeTo(null);
@@ -19,7 +19,7 @@ public class MainSeg extends JFrame {
         panelPrincipal.setLayout(new BorderLayout());
         panelPrincipal.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
 
-        JLabel lblTitulo = new JLabel("Sistema de GestiÛn de Seguridad", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Sistema de Gesti√≥n de Seguridad", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 16));
         lblTitulo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
         panelPrincipal.add(lblTitulo, BorderLayout.NORTH);
@@ -36,7 +36,7 @@ public class MainSeg extends JFrame {
         panelBotones.add(crearBoton("Asistencias", e -> abrirModulo("Asistencias")));
         panelBotones.add(crearBoton("Rondas y Puntos de Control", e -> abrirModulo("Rondas")));
         panelBotones.add(crearBoton("Incidentes", e -> abrirModulo("Incidentes")));
-        panelBotones.add(crearBoton("FacturaciÛn", e -> abrirModulo("FacturaciÛn")));
+        panelBotones.add(crearBoton("Facturaci√≥n", e -> abrirModulo("Facturaci√≥n")));
         panelBotones.add(crearBoton("Usuarios y Roles", e -> abrirModulo("Usuarios")));
 
         panelPrincipal.add(panelBotones, BorderLayout.CENTER);
@@ -59,22 +59,38 @@ public class MainSeg extends JFrame {
 
     private void abrirModulo(String nombreModulo) {
         switch (nombreModulo) {
-            case "Clientes" ->
+            case "Clientes":
                 new ClienteForm().setVisible(true);
-            case "Agentes" ->
+                break;
+            case "Agentes":
                 new AgenteForm().setVisible(true);
-            case "Planes de Servicio" ->
+                break;
+            case "Planes de Servicio":
                 new PlanServicioForm().setVisible(true);
-            case "Contratos" ->
+                break;
+            case "Contratos":
                 new ContratoForm().setVisible(true);
-            case "Puestos de Servicio" ->
+                break;
+            case "Puestos de Servicio":
                 new PuestoForm().setVisible(true);
-            case "Turnos" ->
+                break;
+            case "Turnos":
                 new TurnoForm().setVisible(true);
-            case "Asistencias" ->
+                break;
+            case "Asistencias":
                 new AsistenciaForm().setVisible(true);
-            default ->
-                JOptionPane.showMessageDialog(this, "MÛdulo en construcciÛn: " + nombreModulo);
+                break;
+            case "Incidentes":
+                new IncidenteForm().setVisible(true);
+                break;
+            case "Facturaci√≥n":
+                new FacturaForm().setVisible(true);
+                break;
+            case "Usuarios":
+                new UsuarioForm().setVisible(true);
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "M√≥dulo en construcci√≥n: " + nombreModulo);
         }
     }
 

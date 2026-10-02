@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.List;
 
 /**
- inicio de sesión.
+ * Inicio de sesion.
  */
 public class LoginForm extends JFrame {
 
@@ -19,7 +19,7 @@ public class LoginForm extends JFrame {
     private JPasswordField txtContrasena;
 
     public LoginForm() {
-        setTitle("Empresa de Seguridad - Iniciar Sesión");
+        setTitle("Empresa de Seguridad - Iniciar Sesi\u00f3n");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(360, 260);
         setLocationRelativeTo(null);
@@ -31,7 +31,7 @@ public class LoginForm extends JFrame {
         gbc.insets = new Insets(8, 5, 8, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        JLabel lblTitulo = new JLabel("Iniciar Sesión", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("Iniciar Sesi\u00f3n", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 16));
         gbc.gridx = 0; gbc.gridy = 0; gbc.gridwidth = 2;
         panel.add(lblTitulo, gbc);
@@ -45,7 +45,7 @@ public class LoginForm extends JFrame {
         gbc.gridx = 1; gbc.gridy = 1;
         panel.add(txtUsuario, gbc);
 
-        JLabel lblContrasena = new JLabel("Contraseña:");
+        JLabel lblContrasena = new JLabel("Contrase\u00f1a:");
         gbc.gridx = 0; gbc.gridy = 2;
         panel.add(lblContrasena, gbc);
 
@@ -69,7 +69,7 @@ public class LoginForm extends JFrame {
 
         if (usuario.isEmpty() || contrasena.isEmpty()) {
             JOptionPane.showMessageDialog(this,
-                    "Por favor ingresa usuario y contraseña.",
+                    "Por favor ingresa usuario y contrase\u00f1a.",
                     "Datos incompletos", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -90,7 +90,7 @@ public class LoginForm extends JFrame {
             if (!resultado.isEmpty()) {
                 Usuario usuarioEncontrado = resultado.get(0);
                 JOptionPane.showMessageDialog(this,
-                        "¡Bienvenido, " + usuarioEncontrado.getNombreUsuario() + "!",
+                        "\u00a1Bienvenido, " + usuarioEncontrado.getNombreUsuario() + "!",
                         "Acceso concedido", JOptionPane.INFORMATION_MESSAGE);
 
                 MainSeg menu = new MainSeg();
@@ -98,7 +98,7 @@ public class LoginForm extends JFrame {
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this,
-                        "Usuario o contraseña incorrectos, o el usuario está inactivo.",
+                        "Usuario o contrase\u00f1a incorrectos, o el usuario est\u00e1 inactivo.",
                         "Acceso denegado", JOptionPane.ERROR_MESSAGE);
                 txtContrasena.setText("");
             }
