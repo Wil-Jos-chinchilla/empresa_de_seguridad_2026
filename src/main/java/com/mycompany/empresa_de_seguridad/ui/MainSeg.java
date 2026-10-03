@@ -59,36 +59,53 @@ public class MainSeg extends JFrame {
         return boton;
     }
 
-//  cambio para el agregado de case de los modulos de botones
     private void abrirModulo(String nombreModulo) {
         switch (nombreModulo) {
-            case "Clientes" ->
+            case "Clientes":
                 new ClienteForm().setVisible(true);
-            case "Agentes" ->
+                break;
+            case "Agentes":
                 new AgenteForm().setVisible(true);
-            case "Planes de Servicio" ->
+                break;
+            case "Planes de Servicio":
                 new PlanServicioForm().setVisible(true);
-            case "Contratos" ->
+                break;
+            case "Contratos":
                 new ContratoForm().setVisible(true);
-            case "Puestos de Servicio" ->
+                break;
+            case "Puestos de Servicio":
                 new PuestoForm().setVisible(true);
-            case "Turnos" ->
+                break;
+            case "Turnos":
                 new TurnoForm().setVisible(true);
-            case "Asistencias" ->
+                break;
+            case "Asistencias":
                 new AsistenciaForm().setVisible(true);
-            case "Puntos de Control" ->
+                break;
+            case "Puntos de Control":
                 new PuntoControlForm().setVisible(true);
-            case "Rondas" ->
+                break;
+            case "Rondas":
                 new RondaForm().setVisible(true);
-            case "Registro de Rondas" ->
+                break;
+            case "Registro de Rondas":
                 new RegistroPuntoControlForm().setVisible(true);
-            default ->
+                break;
+            case "Incidentes":
+                new IncidenteForm().setVisible(true);
+                break;
+            case "Facturación":
+                new FacturaForm().setVisible(true);
+                break;
+            case "Usuarios":
+                new UsuarioForm().setVisible(true);
+                break;
+            default:
                 JOptionPane.showMessageDialog(this, "Módulo en construcción: " + nombreModulo);
         }
     }
 
     public static void main(String[] args) {
-
         SwingUtilities.invokeLater(() -> {
             MainSeg menu = new MainSeg();
             menu.setVisible(true);

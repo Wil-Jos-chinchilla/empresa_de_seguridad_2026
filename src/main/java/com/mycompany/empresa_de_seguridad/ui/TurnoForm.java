@@ -102,7 +102,8 @@ public class TurnoForm extends JFrame {
             public Component getListCellRendererComponent(JList<?> list, Object value, int index,
                     boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if (value instanceof AgenteSeguridad a) {
+                if (value instanceof AgenteSeguridad) {
+                    AgenteSeguridad a = (AgenteSeguridad) value;
                     setText(a.getIdAgente() + " - " + a.getNombre() + " " + a.getApellido());
                 }
                 return this;
@@ -113,7 +114,8 @@ public class TurnoForm extends JFrame {
             public Component getListCellRendererComponent(JList<?> list, Object value, int index,
                     boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if (value instanceof Contrato ct) {
+                if (value instanceof Contrato) {
+                    Contrato ct = (Contrato) value;
                     setText("Contrato #" + ct.getIdContrato());
                 }
                 return this;

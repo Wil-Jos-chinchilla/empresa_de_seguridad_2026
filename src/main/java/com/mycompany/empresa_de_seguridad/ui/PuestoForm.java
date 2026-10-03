@@ -1,8 +1,4 @@
 
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-// * @author josei
-
 package com.mycompany.empresa_de_seguridad.ui;
 
 import com.mycompany.empresa_de_seguridad.jpacontroller.ContratoJpaController;
@@ -74,7 +70,8 @@ public class PuestoForm extends JFrame {
             @Override
             public Component getListCellRendererComponent(JList<?> l, Object v, int i, boolean s, boolean f) {
                 super.getListCellRendererComponent(l, v, i, s, f);
-                if (v instanceof Contrato c) {
+                if (v instanceof Contrato) {
+                    Contrato c = (Contrato) v;
                     setText("Contrato #" + c.getIdContrato() + " (" + c.getEstado() + ")");
                 }
                 return this;
